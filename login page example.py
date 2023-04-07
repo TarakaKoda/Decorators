@@ -22,13 +22,13 @@ def login(fun):
             print("please login first to continue further.")
             return
         # print("team uvw")
-        return fun(name, islogin)
+        return fun(name)
 
     return login_details
 
 
 @login
-def home_page(name, islogin):
+def home_page(name):
     print(f"welcome to the home page {name}")
 
 
@@ -36,8 +36,9 @@ home_page("srinu", False)
 # my_homepage = login(home_page)
 # my_homepage("srinu", True)
 
+
 @login
-def about(name,islogin):
+def about(name):
     print(f"this is our about page {name}")
 
 
@@ -49,3 +50,4 @@ def help_page():
 
 
 help_page()
+
