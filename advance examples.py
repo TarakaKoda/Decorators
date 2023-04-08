@@ -21,5 +21,3 @@ def display_user_details(name,age):
 display_homepage()
 display_user_details("srinu",23)
 
-
-
