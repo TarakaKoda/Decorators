@@ -1,3 +1,4 @@
+import time
 
 
 def my_logger(original_function):
@@ -12,8 +13,21 @@ def my_logger(original_function):
     return wrapper
 
 
-@my_logger
+def my_timer(original_function):
+    import time
+    def wrapper(*args, **kwargs):
+        t1 = time.time()
+        result = original_function(*args, **kwargs)
+        t2 = time.time() - t1
+        print(f"{original_function.__name__}  ran in: {t2}")
+        return result
+    return wrapper
+
+
+
+@my_timer
 def display_user_info(name, age):
+    time.sleep(1)
     print(f"username: {name}, age: {age}")
 
 
