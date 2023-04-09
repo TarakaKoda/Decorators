@@ -57,7 +57,7 @@ number = range(1,5)
 result = square(number)
 total = 0
 # print(result)
-for i in result:
+for i in list(result):
     print(i)
 
 print(total)
